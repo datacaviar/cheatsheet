@@ -1,18 +1,117 @@
-# Headline
+# Resources
 
-> An `awesome` project.
+> This is a list of   `resources` that I personally use.
 
-Lorem ipsum dolor sit amet, gravida semper suspendisse ipsum, nam maecenas curabitur. Volutpat orci maecenas dui elementum. Massa at sollicitudin nec erat, sit libero dolor suspendisse amet, adipiscing dolor sed massa. Fermentum lectus. Est dignissim ac tempor, accusantium hac elit massa dictumst soluta
 
-## Libero dictumst mauris
 
-Tempus etiam, justo nullam vel eros et. Conubia integer. Amet elit nulla, eu tortor fugit pede arcu wisi, elit maecenas commodo integer et vitae nonummy. 
+## Virtual Environments
 
+> Virtualenvs
+
+1. **Check if python3 is installed**
 
 ```bash
-    Lorem Ipsum
+	$ python3
 ```
 
-Curabitur amet sed voluptas convallis, urna sodales vivamus dui id minim eget, dapibus nostra dignissim, vestibulum mauris a tortor morbi lobortis eu, felis odio. Eu ligula taciti cras, faucibus ac vel quis donec sodales. Lacinia euismod sed semper donec. Magna aliquam sed non, vestibulum cursus sed ut vivamus felis porttitor, vestibulum nibh augue a pede, vehicula integer ut nunc proin. 
+2. **Instal Virtual Envs**
 
-Et diam integer euismod semper pede sapien, massa orci vel, lorem porttitor quam in orci amet, hymenaeos ultrices in. Urna ipsum pellentesque pretium quis, interdum ante commodo nullam eu tristique, aliquam nec velit nisl in, integer elementum ac recusandae nibh sit eu. Id libero lobortis sed quis. Luctus dapibus malesuada erat duis dolor pede, orci ut justo, diam enim id proin mi.
+```bash
+	$ pip install virtualenv
+```
+
+If you don't have permissions to install it.
+
+```bash
+	$ sudo pip install virtualenv
+```
+
+3. **Create a directory to store your virtual envs**
+
+```bash
+	$ cd ~
+	$ mkdir virtualenvs
+```
+
+4. **Install the `vitualenvwrapper` package**
+
+```bash
+	$ pip install virtualenvwrapper
+```
+
+5. **Edit your `.bashrc` file**
+
+```bash
+	$ cd ~
+	$ nano .bashrc
+```
+
+6. **Add the following lines. Make sure you insert the right path for your system**
+
+```.bashrc
+	export WORKON_HOME=~/virtualenvsexport 
+
+	VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
+	source /usr/local/bin/virtualenvwrapper.sh
+```
+
+Sometimes `.bashrc` will not load if that happens run this command
+```bash
+	$ source ~/.bashrc
+```
+
+7. **Create a new virtualenv with Jupyter**
+
+```bash
+	$ cd ~
+	$ cd virtualenvs
+	$ mkvirtualenv --python=/usr/local/bin/python3 name_of_virtual_env
+```
+
+You will know when you are in your env when you see the name in parentesis `(name_of_virtual_env) ~ $`
+
+8. **Install the software needed for the virtual env**
+
+```bash
+	(name_of_virtual_env) ~ $ pip install --upgrade pip
+	(name_of_virtual_env) ~ $ pip install numpy pandas matplotlib
+	(name_of_virtual_env) ~ $ pip install jupyter jupyterlab
+``` 
+
+9. **Create a directory for the notebook**
+
+```bash
+	(name_of_virtual_env) ~ $ cd ~
+	(name_of_virtual_env) ~ $ mkdir project_name
+	(name_of_virtual_env) ~ $ cd project_name
+```
+
+10. **Fireup jupyter lab**
+
+```bash
+	(name_of_virtual_env) ~ $ jupyter lab
+```
+
+11. **Activating and deactivating virtual envs using virtualenvwrapper**
+
+```bash
+	$ workon
+
+		project_1
+		project_2
+		project_3
+
+	$ workon project_2
+
+	(project_2) ~ $
+
+```
+
+12. **Deactivating**
+
+```bash
+	(project_2) ~ $ deactivate
+
+	$ 
+```

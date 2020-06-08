@@ -1,3 +1,3 @@
 # Welcome to my cheat sheet
 
-[Start Reading](#headline)
+[Start Reading](#resources)
